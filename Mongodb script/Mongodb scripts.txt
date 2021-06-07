@@ -1,0 +1,241 @@
+db.createCollection("admin")
+
+db.admin.insertOne(
+{_id: "Admin1",
+Name: {FName: "Shrishti", 
+MName: "", 
+LName: "Saxena"},
+CustmNo: 7860158110, 
+CustmEmail: "saxena.shrishti03@gmail.com", 
+CustmAddress: 
+{Street: "Manik Chowk", 
+City : "Jhansi", 
+State: "Uttar Pradesh", 
+Pincode: 284002}, 
+CustmDOB: "1999-04-03", 
+Password: "Shri@1999"})
+					
+					
+					
+					
+db.createCollection("customer")		
+			
+ db.customer.insertMany([{
+        "_id" : "Cust001",
+        "Name" : {
+                "FName" : "Shrishti",
+                "MName" : "",
+                "LName" : "Saxena"
+        },
+        "CustmNo" : 7860158110,
+        "CustmEmail" : "saxena.shrishti03@gmail.com",
+        "CustmAddress" : {
+                "Street" : "Manik Chowk",
+                "City" : "Jhansi",
+                "State" : "Uttar Pradesh",
+                "Pincode" : 284002
+        },
+        "CustmDOB" : "1999-04-03",
+        "Password" : "Shrishti@0987"
+},
+{
+        "_id" : "Cust002",
+        "Name" : {
+                "FName" : "Ram",
+                "MName" : "",
+                "LName" : "Singh"
+        },
+        "CustomNo" : 95349154711,
+        "CustmEmail" : "Singhram@gmail.com",
+        "CustmAddress" : {
+                "Street" : "Chok",
+                "City" : "Jhansi",
+                "State" : "Uttar Pradesh",
+                "Pincode" : 284001
+        },
+        "CustomDOB" : "1987-04-23",
+        "Password" : "ra123"
+},
+{
+        "_id" : "Cust003",
+        "Name" : {
+                "FName" : "Jai",
+                "MName" : "",
+                "LName" : "Gupta"
+        },
+        "CustomNo" : 9834850725,
+        "CustmEmail" : "Gupta123@gmail.com",
+        "CustmAddress" : {
+                "Street" : "Sipri",
+                "City" : "Jhansi",
+                "State" : "Uttar Pradesh",
+                "Pincode" : 284003
+        },
+        "CustomDOB" : "1989-05-23",
+        "Password" : "@123"
+}])
+
+db.createCollection("product")
+
+db.product.insertMany([{
+							"_id" : "1",
+							"name" : "Poha",
+							"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/1.png",
+							"price" : 36,
+							"info" : "Nutritious Snack: Enjoy deliciously wholesome and healthy snack with Tata Sampann high in fibre"
+						},
+						{
+								"_id" : "2",
+								"name" : "Atta",
+								"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/2.png",
+								"price" : 239,
+								"info" : "Aashirvaad Select is a premium quality atta made from the King of Wheat – Sharbati wheat which is bigger in size and has a golden sheen"
+						},
+						{
+								"_id" : "3",
+								"name" : "Sooji",
+								"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/3.png",
+								"price" : 29,
+								"info" : "Made with 100 percent roasted, granulated wheat"
+					},
+					{
+							"_id" : "4",
+							"name" : "Moong Dal",
+							"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/4.png",
+							"price" : 164,
+							"info" : "Rich in Nutrients: Moong Dal is naturally rich in protein and high in dietary fibre"
+					},
+					{
+							"_id" : "5",
+							"name" : "Fortune Beasn",
+							"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/5.png",
+							"price" : 94,
+							"info" : "Processed from the best quality chana dal"
+					},
+					{
+							"_id" : "6",
+							"name" : "Sauce",
+							"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/6.png",
+							"price" : 115,
+							"info" : "Desc Use as a chutney or dip to spice up your idli, dosa and vada pav"
+					},
+					{
+							"_id" : "7",
+							"name" : "Tomato ketchup",
+							"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/7.png",
+							"price" : 96,
+							"info" : "Kissan sources 100% of its tomatoes from sustainable sources and is easy to pour and use with sanacks"
+					},
+					{
+							"_id" : "8",
+							"name" : "Hershey's coco powder and syrup",
+							"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/8.png",
+							"price" : 368,
+							"info" : "The natural antioxidants found in tea and certain fruits can also be found in Hershey's unsweetened cocoa"
+					},
+					{
+							"_id" : "9",
+							"name" : "Saffola Gold cooking oil",
+							"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/9.png",
+							"price" : 184,
+							"info" : "Saffola Gold, Pro Healthy Lifestyle, edible oil, is a blend of 70% refined rice bran oil and 30% imported refined sunflower oil"
+					},
+					{
+							"_id" : "10",
+							"name" : "Tata Salt Lite",
+							"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/10.png",
+							"price" : 32,
+							"info" : "Low-sodium salt specially formulated to provide 15% lower sodium than regular salt"
+					},
+					{
+							"_id" : "11",
+							"name" : "Pears Glycerine & Mint Soap",
+							"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/11.png",
+							"price" : 188,
+							"info" : "Refreshing Mint extract keeps your skin soft & fresh and revitalizes your senses"
+					},
+					{
+							"_id" : "12",
+							"name" : "Dove Body Wash",
+							"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/12.png",
+							"price" : 332,
+							"info" : "Nourishes deep into the surface layers of the skin"
+					},
+					{
+							"_id" : "13",
+							"name" : "Fiama gel bar",
+							"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/13.png",
+							"price" : 221,
+							"info" : "It is filled with natural goodness, which gives you soft glowing skin and an indulgent experience."
+					},
+					{
+							"_id" : "14",
+							"name" : "Tresemme keratin shampoo",
+							"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/14.png",
+							"price" : 196,
+							"info" : " Our keratin smooth system is infused with Keratin & Argan Oil which nourishes your hair"
+					},
+					{
+							"_id" : "15",
+							"name" : "L'Oreal Paris Conditioner",
+							"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/15.png",
+							"price" : 139,
+							"info" : "Conditioner For Damaged Hair "
+					},
+					{
+							"_id" : "16",
+							"name" : "Dove daily shine shampoo",
+							"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/16.png",
+							"price" : 355,
+							"info" : "Nourishment and protection from daily damage, wear and tear "
+					},
+					{
+							"_id" : "17",
+							"name" : "Himalaya neem face wash",
+							"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/17.png",
+							"price" : 245,
+							"info" : "Moisten face, apply a small quantity of purifying neem face wash and gently work up a lather using a circular motion"
+					},
+					{
+							"_id" : "18",
+							"name" : "Daawat Rozana Golg Basmati Rice",
+							"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/18.png",
+							"price" : 349,
+							"info" : "Zero cholesterol: Good for your heart and cardio vascular functioning"
+					},
+					{
+							"_id" : "19",
+							"name" : "Veeba Pasta Sauce",
+							"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/19.png",
+							"price" : 67,
+							"info" : "Trans fat free made from finest ingredients"
+					},
+					{
+							"_id" : "20",
+							"name" : "savlon Germs Protection wipes",
+							"imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/20.png",
+							"price" : 157,
+							"info" : "Trusted Savlon Germ Protection - 99.99% Germ Protection. Wipes away germs"
+					}])
+
+
+db.createCollection("orders")
+
+db.orders.insertMany([{
+        "_id" : "1",
+        "name" : "Poha",
+        "imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/1.png",
+        "price" : 36,
+        "info" : "Nutritious Snack: Enjoy deliciously wholesome and healthy snack with Tata Sampann high in fibre"
+},
+{
+        "_id" : "8",
+        "name" : "Hershey's coco powder and syrup",
+        "imageUrl" : "C:/Users/Shrishti/Desktop/Grocery/8.png",
+        "price" : 368,
+        "info" : "The natural antioxidants found in tea and certain fruits can also be found in Hershey's unsweetened cocoa"
+}])
+
+db.createCollection("cart")
+
+db.cart.insertMany([{"customer_id": "Cust001"},{"customer_id": "Cust003"}])
