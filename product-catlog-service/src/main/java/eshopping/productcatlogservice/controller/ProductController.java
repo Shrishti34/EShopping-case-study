@@ -1,40 +1,79 @@
 package eshopping.productcatlogservice.controller;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import eshopping.productcatlogservice.http.header.HeaderGenerator;
+import eshopping.productcatlogservice.model.Product;
+import eshopping.productcatlogservice.service.ProductService;
+
 import java.util.List;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
-
-import eshopping.productcatlogservice.model.Product;
-import eshopping.productcatlogservice.repository.ProductRepository;
-import lombok.RequiredArgsConstructor;
-
 @RestController
-@RequestMapping("/api/product")
-@RequiredArgsConstructor
 public class ProductController {
-	
-	private final ProductRepository productRepository = null;
-	
-	@GetMapping
-	@ResponseStatus(HttpStatus.OK)
-	public List<Product> findAll() {
-		return productRepository.findAll();
-		
-	}
-	
-	@PostMapping
-	@ResponseStatus(HttpStatus.CREATED)
-	public void createProduct(@RequestBody Product product) {
-		productRepository.save(product);
-		
-	}
-	
-	
 
+    @Autowired
+    private ProductService productService;
+    
+    @Autowired
+    private HeaderGenerator headerGenerator;
+
+    @GetMapping (value = "/products")
+    public ResponseEntity<List<eshopping.productcatlogservice.model.Product>> getAllProducts(){
+        List<Product> products =  productService.getAllProduct();
+        if(!products.isEmpty()) {
+        	return new ResponseEntity<List<Product>>(
+        			products,
+        			headerGenerator.getHeadersForSuccessGetMethod(),
+        			HttpStatus.OK);
+        }
+        return new ResponseEntity<List<Product>>(
+        		headerGenerator.getHeadersForError(),
+        		HttpStatus.NOT_FOUND);       
+    }
+
+    @GetMapping(value = "/products", params = "category")
+    public ResponseEntity<List<Product>> getAllProductByCategory(@RequestParam ("category") String category){
+        List<Product> products = productService.getAllProductByCategory(category);
+        if(!products.isEmpty()) {
+        	return new ResponseEntity<List<Product>>(
+        			products,
+        			headerGenerator.getHeadersForSuccessGetMethod(),
+        			HttpStatus.OK);
+        }
+        return new ResponseEntity<List<Product>>(
+        		headerGenerator.getHeadersForError(),
+        		HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping (value = "/products/{id}")
+    public ResponseEntity<Product> getOneProductById(@PathVariable ("id") long id){
+        Product product =  productService.getProductById(id);
+        if(product != null) {
+        	return new ResponseEntity<Product>(
+        			product,
+        			headerGenerator.getHeadersForSuccessGetMethod(),
+        			HttpStatus.OK);
+        }
+        return new ResponseEntity<Product>(
+        		headerGenerator.getHeadersForError(),
+        		HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping (value = "/products", params = "name")
+    public ResponseEntity<List<Product>> getAllProductsByName(@RequestParam ("name") String name){
+        List<Product> products =  productService.getAllProductsByName(name);
+        if(!products.isEmpty()) {
+        	return new ResponseEntity<List<Product>>(
+        			products,
+        			headerGenerator.getHeadersForSuccessGetMethod(),
+        			HttpStatus.OK);
+        }
+        return new ResponseEntity<List<Product>>(
+        		headerGenerator.getHeadersForError(),
+        		HttpStatus.NOT_FOUND);
+    }
 }
