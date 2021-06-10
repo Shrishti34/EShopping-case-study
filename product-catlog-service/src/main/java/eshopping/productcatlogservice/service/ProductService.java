@@ -1,10 +1,7 @@
 package eshopping.productcatlogservice.service;
 
 import java.util.List;
-
 import eshopping.productcatlogservice.model.Product;
-
-
 
 public interface ProductService {
     public List<Product> getAllProduct();

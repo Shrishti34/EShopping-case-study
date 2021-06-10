@@ -1,4 +1,4 @@
-package eshopping.userservice.http.header;
+package eshopping.orderservice.http.header;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -21,7 +21,7 @@ public class HeaderGenerator {
 		return httpHeaders;
 	}
 	
-	public HttpHeaders getHeadersForSuccessPostMethod(HttpServletRequest request, String newResourceId) {
+	public HttpHeaders getHeadersForSuccessPostMethod(HttpServletRequest request, Long newResourceId) {
 		HttpHeaders httpHeaders = new HttpHeaders();
 		try {
 			httpHeaders.setLocation(new URI(request.getRequestURI() + "/" + newResourceId));

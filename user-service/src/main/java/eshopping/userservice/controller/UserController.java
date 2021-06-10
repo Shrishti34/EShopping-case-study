@@ -53,7 +53,7 @@ public class UserController {
 	    }
 	 
 	 @GetMapping (value = "/users/{id}")
-	    public ResponseEntity<User> getUserById(@PathVariable("id") Long id){
+	    public ResponseEntity<User> getUserById(@PathVariable("id") String id){
 	        User user = userService.getUserById(id);
 	        if(user != null) {
 	    		return new ResponseEntity<User>(
