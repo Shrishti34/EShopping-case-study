@@ -1,4 +1,4 @@
-package eshopping.orderservice.redis;
+package eshopping.cartservice.redis;
 
 import java.util.Collection;
 

@@ -1,8 +1,8 @@
-package eshopping.orderservice.service;
+package eshopping.cartservice.service;
 
 import java.util.List;
 
-import eshopping.orderservice.domain.Item;
+import eshopping.cartservice.domain.Item;
 
 public interface CartService {
 

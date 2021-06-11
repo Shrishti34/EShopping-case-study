@@ -1,10 +1,8 @@
-package eshopping.orderservice.utilities;
+package eshopping.cartservice.utilities;
 
 import java.math.BigDecimal;
 
-import eshopping.orderservice.domain.Product;
-
-
+import eshopping.cartservice.domain.Product;
 
 public class CartUtilities {
 

@@ -1,13 +1,12 @@
-package eshopping.orderservice.controller;
-
+package eshopping.cartservice.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import eshopping.orderservice.http.header.HeaderGenerator;
-import eshopping.orderservice.service.CartService;
+import eshopping.cartservice.http.header.HeaderGenerator;
+import eshopping.cartservice.service.CartService;
 
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -35,21 +34,21 @@ public class CartController {
     			HttpStatus.NOT_FOUND);  
     }
 
-    @PostMapping(value = "/cart", params = {"productId", "quantity"})
+    @PostMapping(value = "/cart", params = {"id", "quantity"})
     public ResponseEntity<List<Object>> addItemToCart(
-            @RequestParam("productId") Long productId,
+            @RequestParam("id") Long id,
             @RequestParam("quantity") Integer quantity,
             @RequestHeader(value = "Cookie") String cartId,
             HttpServletRequest request) {
         List<Object> cart = cartService.getCart(cartId);
         if(cart != null) {
         	if(cart.isEmpty()){
-        		cartService.addItemToCart(cartId, productId, quantity);
+        		cartService.addItemToCart(cartId, id, quantity);
         	}else{
-        		if(cartService.checkIfItemIsExist(cartId, productId)){
-        			cartService.changeItemQuantity(cartId, productId, quantity);
+        		if(cartService.checkIfItemIsExist(cartId, id)){
+        			cartService.changeItemQuantity(cartId, id, quantity);
         		}else {
-        			cartService.addItemToCart(cartId, productId, quantity);
+        			cartService.addItemToCart(cartId, id, quantity);
         		}
         	}
         	return new ResponseEntity<List<Object>>(
@@ -62,13 +61,13 @@ public class CartController {
         		HttpStatus.BAD_REQUEST);
     }
 
-    @DeleteMapping(value = "/cart", params = "productId")
+    @DeleteMapping(value = "/cart", params = "id")
     public ResponseEntity<Void> removeItemFromCart(
-            @RequestParam("productId") Long productId,
+            @RequestParam("id") Long id,
             @RequestHeader(value = "Cookie") String cartId){
     	List<Object> cart = cartService.getCart(cartId);
     	if(cart != null) {
-    		cartService.deleteItemFromCart(cartId, productId);
+    		cartService.deleteItemFromCart(cartId, id);
             return new ResponseEntity<Void>(
             		headerGenerator.getHeadersForSuccessGetMethod(),
             		HttpStatus.OK);
