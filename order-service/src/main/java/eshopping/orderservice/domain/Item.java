@@ -3,11 +3,15 @@ package eshopping.orderservice.domain;
 
 import javax.validation.constraints.NotNull;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigDecimal;
 import java.util.List;
 
+@EntityScan
+@Document(collection = "cart")
 public class Item {
 
 	 @Id
