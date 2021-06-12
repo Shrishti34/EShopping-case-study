@@ -15,7 +15,7 @@ import java.util.List;
 public class Item {
 
 	 @Id
-	 private Long id;
+	 private Long CartId;
 	 private int quantity;
 	 private BigDecimal subTotal;
 	 private Product product;
@@ -32,11 +32,11 @@ public class Item {
 	    }
 	 
 		public Long getId() {
-			return id;
+			return CartId;
 		}
 
 		public void setId(Long id) {
-			this.id = id;
+			this.CartId = id;
 		}
 
 		public int getQuantity() {
