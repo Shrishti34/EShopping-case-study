@@ -1,0 +1,24 @@
+server:
+  port: 8100
+
+zuul:
+  routes:
+    user-service:
+      url: http://localhost:8811
+    product-service:
+      url: http://localhost:8810
+    order-service:
+      url: http://localhost:8813
+  host:
+    connect-timeout-millis: 2000
+    socket-timeout-millis: 5000
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

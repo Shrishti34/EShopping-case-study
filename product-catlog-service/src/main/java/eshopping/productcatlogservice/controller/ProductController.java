@@ -65,7 +65,9 @@ public class ProductController {
 	    }
 
 	    @GetMapping (value = "/products", params = "name")
-	    public ResponseEntity<List<Product>> getAllProductsByName(@RequestParam ("name") String name){
+	    //@GetMapping (value = "/products/{name}")
+	   public ResponseEntity<List<Product>> getAllProductsByName(@RequestParam ("name") String name){
+	    //public ResponseEntity<List<Product>> getAllProductsByName(@PathVariable ("name") String name){
 	        List<Product> products =  productService.getAllProductsByName(name);
 	        if(!products.isEmpty()) {
 	        	return new ResponseEntity<List<Product>>(

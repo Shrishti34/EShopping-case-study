@@ -1,5 +1,37 @@
-{"properties": [{
-  "name": "zuul.prefix",
-  "type": "java.lang.String",
-  "description": "A description for 'zuul.prefix'"
-}]}
+{"properties": [
+  {
+    "name": "zuul.prefix",
+    "type": "java.lang.String",
+    "description": "A description for 'zuul.prefix'"
+  },
+  {
+    "name": "hystrix.command.default.circutBreaker.errorThresholdPercentage",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.default.circutBreaker.errorThresholdPercentage'"
+  },
+  {
+    "name": "hystrix.command.default.circutBreaker.sleepWindowInMilliseconds",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.default.circutBreaker.sleepWindowInMilliseconds'"
+  },
+  {
+    "name": "zuul.host.connect.timeout.millis",
+    "type": "java.lang.String",
+    "description": "A description for 'zuul.host.connect.timeout.millis'"
+  },
+  {
+    "name": "zuul.host.socket.timeout.millis",
+    "type": "java.lang.String",
+    "description": "A description for 'zuul.host.socket.timeout.millis'"
+  },
+  {
+    "name": "hystrix.command.doSomethingKey.circutBreaker.requestVolumeThreshold",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.doSomethingKey.circutBreaker.requestVolumeThreshold'"
+  },
+  {
+    "name": "hystrix.command.doSomethingKey.metrics.rollingStats.timeInMilliseconds",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command.doSomethingKey.metrics.rollingStats.timeInMilliseconds'"
+  }
+]}

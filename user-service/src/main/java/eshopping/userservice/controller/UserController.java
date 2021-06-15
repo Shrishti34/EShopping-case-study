@@ -37,8 +37,10 @@ public class UserController {
 	        		HttpStatus.NOT_FOUND);
 	    }
 	 
-	 @GetMapping (value = "/users", params = "name")
-	    public ResponseEntity<User> getUserByName(@RequestParam("name") String userName){
+	// @GetMapping (value = "/users", params = "name")
+	 @GetMapping (value = "/users/{name}")
+	   // public ResponseEntity<User> getUserByName(@RequestParam("name") String userName){
+		 public ResponseEntity<User> getUserByName(@PathVariable("name") String userName){
 	    	User user = userService.getUserByName(userName);
 	    	if(user != null) {
 	    		return new ResponseEntity<User>(
