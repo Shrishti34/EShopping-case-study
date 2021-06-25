@@ -9,8 +9,8 @@ import eshopping.userservice.entity.User;
 @Service
 public interface UserService {
 
-	List<User> getAllUsers();
-    User getUserById(Long id);
-    User getUserByName(String userName);
-    User saveUser(User user);
+	    List<User> getAllUsers();
+	    User getUserById(String id);
+	    User getUserByName(String userName);
+	    User saveUser(User user);
 }

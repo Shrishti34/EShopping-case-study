@@ -13,8 +13,8 @@ import java.util.List;
 @Service
 @Transactional
 public class ProductServiceImpl implements ProductService {
-
-    @Autowired
+	
+	@Autowired
     private ProductRepository productRepository;
 
     @Override
@@ -29,12 +29,12 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product getProductById(Long id) {
-        return productRepository.getOne(id);
+    	return productRepository.findById(id).orElse(null);
     }
 
     @Override
     public List<Product> getAllProductsByName(String name) {
-        return ProductRepository.findAllByProductName(name);
+        return productRepository.findAllByName(name);
     }
 
     @Override
@@ -47,15 +47,4 @@ public class ProductServiceImpl implements ProductService {
         productRepository.deleteById(productId);
     }
 
-	@Override
-	public Product getProductById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Product addProduct(Product product) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

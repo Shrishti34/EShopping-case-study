@@ -21,10 +21,10 @@ public class HeaderGenerator {
 		return httpHeaders;
 	}
 	
-	public HttpHeaders getHeadersForSuccessPostMethod(HttpServletRequest request, String newResourceName) {
+	public HttpHeaders getHeadersForSuccessPostMethod(HttpServletRequest request, String newResourceId) {
 		HttpHeaders httpHeaders = new HttpHeaders();
 		try {
-			httpHeaders.setLocation(new URI(request.getRequestURI() + "/" + newResourceName));
+			httpHeaders.setLocation(new URI(request.getRequestURI() + "/" + newResourceId));
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
 		}

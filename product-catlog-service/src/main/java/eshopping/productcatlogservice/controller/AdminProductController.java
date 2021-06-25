@@ -1,5 +1,6 @@
 package eshopping.productcatlogservice.controller;
 
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,18 +11,16 @@ import eshopping.productcatlogservice.http.header.HeaderGenerator;
 import eshopping.productcatlogservice.model.Product;
 import eshopping.productcatlogservice.service.ProductService;
 
-import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/admin")
 public class AdminProductController {
-
-    @Autowired
+	@Autowired
     private ProductService productService;
     
     @Autowired
     private HeaderGenerator headerGenerator;
-
+//admin can add the product
     @PostMapping(value = "/products")
     private ResponseEntity<Product> addProduct(@RequestBody Product product, HttpServletRequest request){
     	if(product != null) {
@@ -61,4 +60,5 @@ public class AdminProductController {
     	}
     	return new ResponseEntity<Void>(headerGenerator.getHeadersForError(), HttpStatus.NOT_FOUND);      
     }
+
 }
