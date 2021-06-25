@@ -27,9 +27,9 @@ import lombok.RequiredArgsConstructor;
 @Api(value = "/payment", consumes = MediaType.APPLICATION_JSON_VALUE)
 public class PaymentController {
 
-	private final Payments payments;
+	private Payments payments;
 	
-	private final PaymentProcess paymentProcess;
+	private PaymentProcess paymentProcess;
 
 	@ApiOperation(value = "Create payment")
 	@ApiResponses(value = { @ApiResponse(code = 200, message = "Payment created OK"),

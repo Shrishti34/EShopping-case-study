@@ -7,9 +7,6 @@ import lombok.Getter;
 @Getter
 public class ErrorResponse implements Serializable {
 
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = 6523609406142456613L;
 	private String error;
 

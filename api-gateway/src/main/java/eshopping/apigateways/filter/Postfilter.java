@@ -13,10 +13,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-
-/**
- * @author - GreenLearner(https://www.youtube.com/channel/UCaH2MTg94hrJZTolW01a3ZA)
- */
 @Configuration
 public class Postfilter extends ZuulFilter {
     private static Logger log = LoggerFactory.getLogger(Postfilter.class);

@@ -8,10 +8,6 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.servlet.http.HttpServletRequest;
 
-
-/**
- * @author - GreenLearner(https://www.youtube.com/channel/UCaH2MTg94hrJZTolW01a3ZA)
- */
 @Configuration
 public class PreSecondfilter extends ZuulFilter {
     private static Logger log = LoggerFactory.getLogger(PreSecondfilter.class);

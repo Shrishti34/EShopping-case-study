@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class PaymentProcessImpl implements PaymentProcess {
 	
-	private final Payments payments;
+	private Payments payments;
 
 	public Payment process(Payment payment) {
 	payment.setStatus(PaymentStatus.APPROVED);

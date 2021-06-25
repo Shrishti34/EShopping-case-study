@@ -1,5 +1,8 @@
 server:
   port: 8100
+  application.name: api-service
+  server.url: http://localhost:8100
+  
 
 zuul:
   routes:
@@ -9,6 +12,8 @@ zuul:
       url: http://localhost:8810
     order-service:
       url: http://localhost:8813
+    cart-service:
+      url: http://localhost:8812
   host:
     connect-timeout-millis: 2000
     socket-timeout-millis: 5000
